@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dress_socks (0.1.0)
+    dress_socks (0.1.1)
 
 GEM
   remote: https://rubygems.org/
