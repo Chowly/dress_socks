@@ -1,8 +1,8 @@
 # DressSocks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dress_socks`. To experiment with that code, run `bin/console` for an interactive prompt.
+A pure ruby implementation of SOCKSSocket, allowing tunneling a socket through a SOCKS proxy.
 
-TODO: Delete this and the text above, and describe your gem
+Based heavily on Socksify, we needed more flexibility in how we setup the tcp connection and only setting it up for certain pieces of code.
 
 ## Installation
 
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+DressSocks::Socket.new(remote_host, remote_port, socks_username: nil, socks_password: nil, socks_server: nil, socks_port: nil, socks_ignore: [], socks_version: '5')
+
+Creates a new TCP Socket that tunnels through the socks configuration passed.
 
 ## Development
 
@@ -32,7 +34,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dress_socks.
+Bug reports and pull requests are welcome on GitHub at https://github.com/chowly/dress_socks.
 
 ## License
 
