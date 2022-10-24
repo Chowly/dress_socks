@@ -1,6 +1,6 @@
 module DressSocks
   class SOCKSError < RuntimeError
-    def initialize(msg)
+    def initialize(msg = nil)
       super
     end
 
