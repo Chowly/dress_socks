@@ -22,9 +22,28 @@ Or install it yourself as:
 
 ## Usage
 
+``` ruby
 DressSocks::Socket.new(remote_host, remote_port, socks_username: nil, socks_password: nil, socks_server: nil, socks_port: nil, socks_ignore: [], socks_version: '5')
+```
 
 Creates a new TCP Socket that tunnels through the socks configuration passed.
+
+## Examples
+To use ```dress_socks``` with most interact with common network tasks you'll mostlikely need to Monkey Patch the standard libraries, below are some examples:
+
+FTP
+``` ruby
+$socks_server = 'x.x.x.x'
+$socks_port   = 'xxxx'
+
+# Monkey Patching FTP library to connect to an exisiting SOCKS5 conenction:
+class Net::FTP   
+  def open_socket(host, port) # :nodoc:
+    return DressSocks::Socket.new(@host, port, 
+      socks_server: $socks_server, socks_port: $socks_port)
+  end
+end
+```
 
 ## Development
 
