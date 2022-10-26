@@ -4,6 +4,8 @@ A pure ruby implementation of SOCKSSocket, allowing tunneling a socket through a
 
 Based heavily on Socksify, we needed more flexibility in how we setup the tcp connection and only setting it up for certain pieces of code.
 
+Also useful for Windows machines where the native SOCKSSocket relies on Dante (https://www.inet.no/dante/) which isn't available for Windows.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -29,7 +31,7 @@ DressSocks::Socket.new(remote_host, remote_port, socks_username: nil, socks_pass
 Creates a new TCP Socket that tunnels through the socks configuration passed.
 
 ## Examples
-To use ```dress_socks``` with most interact with common network tasks you'll mostlikely need to Monkey Patch the standard libraries, below are some examples:
+To use ```dress_socks``` to interact with common network tasks you'll mostlikely need to Monkey Patch the standard libraries, below are some examples:
 
 FTP
 ``` ruby
