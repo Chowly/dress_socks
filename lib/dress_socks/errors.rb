@@ -45,7 +45,7 @@ module DressSocks
       end
     end
 
-    def self.for_response_code(code)
+    def self.for_response_code(code = nil)
       case code
       when 1
         ServerFailure
